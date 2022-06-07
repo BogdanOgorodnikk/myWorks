@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <!-- SEO and titles -->
+  <meta name="description" content="Fyrefish">
+  <meta name="keywords" content="Keywords">
+  <title>Fyrefish</title>
+  <!-- enable PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Windows PWA settings -->
+  <meta name="msapplication-navbutton-color" content="#181C32">
+  <meta name="msapplication-config" content="media/favicons/browserconfig.xml">
+  <!-- MacOS PWA settings (pinned Sites) -->
+  <meta name="application-name" content="Fyrefish">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="<%= BASE_URL %>favicon.ico">
+  <link href="<%= BASE_URL %>media/favicons/icon-48x48.png" rel="icon" type="image/png" sizes="48x48">
+  <!-- Android PWA App icons -->
+  <link href="<%= BASE_URL %>media/favicons/icon-128x128.png" rel="icon" sizes="128x128">
+  <link href="<%= BASE_URL %>media/favicons/icon-192x192.png" rel="icon" sizes="192x192">
+  <!-- iOS PWA App icons -->
+  <link href="<%= BASE_URL %>media/favicons/icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57">
+  <link href="<%= BASE_URL %>media/favicons/icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="<%= BASE_URL %>media/favicons/icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="<%= BASE_URL %>media/favicons/icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="<%= BASE_URL %>media/favicons/icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-640x1136.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-750x1334.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-828x1792.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1080x2340.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1125x2436.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1170x2532.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1242x2208.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1242x2688.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)"
+    href="media/apple/apple-launch-1284x2778.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-1536x2048.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-1620x2160.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-1640x2360.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-1668x2224.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-1668x2388.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2048x1536.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2048x2732.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1080px) and (device-height: 810px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2160x1620.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1112px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2224x1668.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1180px) and (device-height: 820px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2360x1640.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1194px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2388x1668.png"
+  >
+  <link
+    rel="apple-touch-startup-image"
+    media="(device-width: 1366px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+    href="media/apple/apple-launch-2732x2048.png"
+  >
+</head>
+
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<noscript>
+  <strong>
+    We're sorry but our app doesn't work properly without JavaScript enabled. Please enable it to continue.
+  </strong>
+</noscript>
+</body>
+</html>

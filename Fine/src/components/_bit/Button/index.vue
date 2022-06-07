@@ -1,0 +1,355 @@
+<template>
+  <t-button
+    class="button"
+    :disabled="disabled"
+    :class="buttonClasses"
+    :variant="variant"
+    @click="onClick"
+  >
+    <!-- @slot Use it to add something before text. -->
+    <slot name="icon-left" />
+
+    <!-- @slot Use it to add something instead of text. -->
+    <slot>
+      <div v-if="text" class="text-wrap">
+        {{ text }}
+      </div>
+    </slot>
+
+    <!-- @slot Use it to add something after text. -->
+    <slot name="icon-right" />
+  </t-button>
+</template>
+
+<script>
+import { getTheme } from "@ilevel/our.service.ui";
+import TButton from "vue-tailwind/dist/t-button";
+
+export default {
+  name: "OurButton",
+
+  components: {
+    TButton,
+  },
+
+  props: {
+    /**
+     * The variant of the button.
+     * @values primary, secondary, thirdary, transparent
+     */
+    variant: {
+      type: String,
+      default: "primary",
+    },
+
+    /**
+     * The size of the button.
+     * @values sm, md, lg
+     */
+    size: {
+      type: String,
+      default: "md",
+    },
+
+    /**
+     * Set button text.
+     */
+    text: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * Make button inactive.
+     */
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+
+    /**
+     * Make button's corners rounded.
+     */
+    pill: {
+      type: Boolean,
+      default: false,
+    },
+
+    darkMode: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  computed: {
+    buttonClasses() {
+      const size = `button-${this.size}`;
+      const theme = getTheme();
+      const classes = { pill: this.pill, "dark-mode": this.darkMode };
+
+      return [theme, classes, this.variant, size];
+    },
+  },
+
+  methods: {
+    onClick() {
+      this.$emit("click");
+    },
+  },
+};
+</script>
+
+<style scoped lang="postcss">
+.button {
+  @apply flex items-center justify-center;
+  @apply text-base font-medium;
+  @apply rounded-lg outline-none;
+  @apply transition duration-100 ease-in-out;
+
+  &:focus {
+    @apply ring-4 ring-gray-600 ring-opacity-15;
+  }
+
+  .text-wrap {
+    @apply whitespace-nowrap px-1.5;
+  }
+
+  &-sm {
+    @apply px-2.5 py-2;
+    @apply text-sm;
+  }
+
+  &-md {
+    @apply px-3 py-2.5;
+  }
+
+  &-lg {
+    @apply px-4 py-3.5;
+  }
+
+  &-xl {
+    @apply px-6 py-3.5;
+  }
+}
+
+.pill {
+  @apply rounded-full;
+}
+
+.primary {
+  @apply border border-solid border-base-dark bg-base-dark text-white;
+
+  &:focus {
+    @apply bg-gray-700;
+  }
+
+  &:hover {
+    @apply border-gray-700 bg-gray-700;
+  }
+
+  &:active {
+    @apply border-gray-600 bg-gray-600;
+  }
+
+  &:disabled {
+    @apply text-gray-400;
+    @apply border-gray-200 bg-gray-200;
+  }
+}
+
+.secondary {
+  @apply border border-solid border-gray-900 bg-transparent text-base-dark;
+
+  &:focus {
+    @apply border-gray-700 text-gray-700;
+  }
+
+  &:hover {
+    @apply border-gray-700 text-gray-700;
+  }
+
+  &:active {
+    @apply border-gray-600 text-gray-600;
+  }
+
+  &:disabled {
+    @apply text-gray-400;
+    @apply border-gray-300;
+  }
+}
+
+.thirdary {
+  @apply border border-transparent bg-transparent text-base-dark;
+
+  &:focus {
+    @apply border-gray-200 bg-base-dark bg-opacity-5;
+  }
+
+  &:hover {
+    @apply border-base-dark border-opacity-0 bg-base-dark bg-opacity-5;
+  }
+
+  &:active {
+    @apply border-base-dark border-opacity-0 bg-base-dark bg-opacity-10 text-gray-600;
+  }
+
+  &:disabled {
+    @apply text-gray-400;
+  }
+}
+
+.transparent {
+  @apply bg-base-dark bg-opacity-5;
+
+  &:focus {
+    @apply border-gray-100 bg-opacity-10 ring-4 ring-gray-100;
+  }
+
+  &:hover {
+    @apply bg-opacity-10;
+  }
+
+  &:active {
+    @apply bg-opacity-15;
+  }
+}
+
+.dark-mode {
+  &.transparent {
+    @apply bg-white bg-opacity-5 text-white;
+  }
+}
+
+.link {
+  @apply text-xs font-normal text-gray-500;
+  @apply rounded-none border-b border-dashed border-gray-500 bg-transparent;
+  @apply p-0 ring-transparent;
+
+  &:hover {
+    @apply border-gray-600 text-gray-600;
+  }
+
+  .text-wrap {
+    @apply p-0;
+  }
+}
+</style>
+
+<!-- Sweet theme -->
+<style scoped lang="postcss">
+.sweet-theme {
+  &.primary {
+    @apply bg-gradient-to-r from-violet-600 to-blue-600;
+    @apply border-none;
+  }
+
+  &.secondary {
+    @apply border-violet-900 border-opacity-40;
+
+    .text-wrap {
+      @apply bg-clip-text text-transparent;
+      @apply bg-gradient-to-r from-violet-600 to-blue-600;
+    }
+  }
+}
+</style>
+
+<!-- Accent theme -->
+<style scoped lang="postcss">
+.accent-theme {
+  &.button {
+    &:focus {
+      @apply ring-4 ring-accent ring-opacity-15;
+    }
+  }
+
+  &.primary {
+    @apply border-accent bg-accent;
+    @apply border border-solid text-white;
+
+    &:focus {
+      @apply bg-accent bg-opacity-80;
+    }
+
+    &:hover {
+      @apply bg-accent bg-opacity-80;
+      @apply border-accent border-opacity-5;
+    }
+
+    &:active {
+      @apply bg-accent bg-opacity-70;
+      @apply border-accent border-opacity-5;
+    }
+
+    &:disabled {
+      @apply text-white;
+      @apply border-transparent bg-accent bg-opacity-50;
+    }
+  }
+
+  &.secondary {
+    @apply border border-solid bg-transparent text-accent;
+    @apply border-accent border-opacity-90;
+
+    &:focus {
+      @apply border-accent border-opacity-80;
+      @apply text-accent text-opacity-70;
+    }
+
+    &:hover {
+      @apply border-accent border-opacity-80;
+      @apply text-accent text-opacity-70;
+    }
+
+    &:active {
+      @apply border-accent border-opacity-70;
+      @apply text-accent text-opacity-60;
+    }
+
+    &:disabled {
+      @apply text-accent text-opacity-40;
+      @apply border-accent border-opacity-20;
+    }
+  }
+
+  &.thirdary {
+    @apply border border-transparent bg-transparent text-base-dark;
+
+    &:focus {
+      @apply bg-accent bg-opacity-5;
+      @apply border-accent border-opacity-20;
+    }
+
+    &:hover {
+      @apply bg-accent bg-opacity-5;
+      @apply border-accent border-opacity-0;
+    }
+
+    &:active {
+      @apply bg-accent bg-opacity-10 text-gray-600;
+      @apply border-accent border-opacity-0;
+    }
+
+    &:disabled {
+      @apply text-gray-400;
+    }
+  }
+
+  &.transparent {
+    @apply bg-accent bg-opacity-5;
+
+    &:focus {
+      @apply bg-opacity-10 ring-4 ring-accent ring-opacity-5;
+      @apply border-accent;
+    }
+
+    &:hover {
+      @apply bg-opacity-10;
+    }
+
+    &:active {
+      @apply bg-opacity-15;
+    }
+  }
+}
+</style>

@@ -1,0 +1,987 @@
+layout:
+  auth:
+    heading: <span>Понятный</span> <br /> финансовой учет для малого бизнеса
+    feature:
+      first: Автоматически собирает движения денег по счетам и разносит операции.
+      second: Формирует понятные для руководителя отчеты и графики.
+      third: Обеспечивает полный и безопасный контроль денег в бизнесе.
+  main:
+    logout: Вийти
+
+page:
+  login:
+    title: Вход в Finé
+  signUp:
+    title: Регистрация в Finé
+    acceptRule: Отправляя форму, вы подтверждаете, что принимаете <a href={agreementLink}>договор-оферту</a> и согласны с <a href={policyLink}>политикой конфиденциальности</a>.
+    hasAccount: Уже есть аккаунт в Finé? Войти
+  forgotPassword:
+    _: Забыли пароль?
+    title: Не можете войти?
+    description: Мы вышлем вам новый пароль на почту.
+    backToLogInForm: Вернуться на форму входа
+  business:
+    companyNotSpecified: Не указано
+    deleteBusiness: Вы действительно хотите удалить бизнес <span>«{business}»?</span> <br />
+      <br />
+      Вместе с ним будут удалены все его операции, контрагенты, проекты и прочее.
+  bitrix24:
+    signUp:
+      haveAccount: Уже есть аккаунт в Finé? Подключить
+    connect:
+      connectToBx24: Подключение в Bitrix24
+      createNewAccount: Создать новый аккаунт
+      integrationWithBx24Rules: 'Чтобы выполнить интеграцию с Битрикс24:'
+      goInSettingsBx24: 'В вашем аккаунте Finé перейдите на страницу: Настройки > Интеграции > Битрикс24.'
+      writeAddressOnPortal: Введите ссылку на ваш портал Битрикс24.
+      clickOnIntegrate: Нажмите кнопку “Интегрировать”. Обновите данную страницу по завершении процесса.
+  setting:
+    category:
+      deleteModalText: Вы действидельно хотите удалить статью «<span>{title}</span>»?
+    contragent:
+      deleteModalText: Вы действидельно хотите удалить контрагентa «<span>{title}</span>»?
+    tag:
+      deleteModalText: Вы действидельно хотите удалить тег «<span>{title}</span>»?
+    project:
+      deleteModalText: Вы действидельно хотите удалить проект «<span>{title}</span>»?
+    company:
+      deleteModalText: Вы действидельно хотите удалить компанию «<span>{title}</span>»?
+    role:
+      deleteModalText: Вы действидельно хотите удалить роль «<span>{title}</span>»?
+    user:
+      fireModalText: Вы действительно хотите уволить пользователя «<span>{title}</span>»?
+      restoreModalText: Вы действительно хотите восстановить пользователя «<span>{title}</span>»?
+    # >>> Should be renamed when error page will be ready
+    account:
+      yourAccounts: Ваши счета
+      whatAccountYouWantToAdd: Какой счёт хотите добавить?
+      inputNameAndCompany: 'Укажите название и компанию:'
+      enterYourAccountDetails: 'Укажите данные счёта:'
+      whichBankIsTheAccountOpenedWith: В каком банке открыт счёт?
+      integrationWithBank: 'Интеграция с банком:'
+      settingImportFileFormListTitle: 'Для настройки импорта выписки из банка укажите:'
+      rowNumberInTheTableStartingFrom: Номер строки в таблице, начиная с которой необходимо загружать данные.
+      sheetNumberOnWhichTheDataIsLocated: Номер листа на котором находятся данные.
+      statementDateFormat: 'Формат даты выписки, где: день –  “DD”,  месяц – “MM”, год – “YY” или “YYYY”.'
+      readInstruction: прочитать инструкцию
+      setColumnsInTheSameOrderAsInYourImportFile: Установите колонки в том же порядке, как они идут в
+        вашем файле импорта. Чтобы пропустить колонку используйте блок “Пропуск”.
+      availableColumns: 'Доступные колонки:'
+      yourFileColumns: 'Колонки вашего файла:'
+      deleteAccountDescription: Вы действительно хотите удалить счёт <span>«{title}»</span>?
+    bitrix24:
+      integrationUpdated: Интеграция обновлена
+      integratedUser: '{user} назначен как пользователь для обмена данными с Битрикс24.'
+      integratedRecomend: Мы рекомендуем подключать пользователя с правами администратора,
+        чтобы Finé мог отображать все данные из Битрикс24.
+      changeIntegrationUser:
+        _: 'Если вы хотите подключить другого пользователя:'
+        cancelIntegration: Отмените интеграцию, используя кнопку ниже.
+        signInUserInBx24: Авторизируйтесь необходимым пользователем в Битрикс24.
+        repeatIntegration: Заново выполните интеграцию.
+      integrationInstruction:
+        _: 'Чтобы выполнить интеграцию с Битрикс24:'
+        installFineInBx24: Установите приложение Finé на ваш Битрикс24.
+        writeLinkOnBx24: Введите адрес вашего портала Битрикс24.
+        clickOnIntegrate: Нажмите кнопку “Интегрировать”.
+  forbidden:
+    description: Доступ к странице запрещен.
+  notFound:
+    description: Запрашиваемая страница не найдена.
+  transactions:
+    mergeRequirements: 'Для объединения выбранных операций в перевод они должны иметь:'
+    differentAccounts: Разные счета
+    differentTypes: Разные типы
+    incomeAndExpense: приходная и расходная
+    similarDate: Одинаковые даты
+    similarStatus: Одинаковые статусы
+    acceptOrDeclined: подтверждена или не подтверждена
+    similarAmount: Одинаковые суммы
+    accountCurrencySimilar: если валюты счетов тоже одинаковые
+    deleteModalText: Вы действительно хотите удалить данную операцию?
+    divideTransferTransactionModal: Вы действительно хотите разъединить перевод на 2 операции?
+    massDeleteModalText: ' | Вы действительно хотите удалить <span>{count} операцию</span>? | Вы действительно хотите удалить <span>{count} операции</span>? | Вы действительно хотите удалить <span>{count} операций</span>?'
+    importModal:
+      selectFile: Выберите файл или перетащите его в это окно.
+      importOpportunities: 'Fine умеет импортировать банковские выписки в форматах: CSV, TXT, и XLSX (эксель таблицы).'
+    moneyDetails:
+      totalOnAccounts: Всего на счетах
+      showInCurrency: показать в {currency}
+      futurePayments: Будущие платежи
+      futurePaymentsPeriod: за {amountOfMonth} мес.
+      futureIncome: Будущие доходы
+      futureExpense: Будущие расходы
+      consideringFuturePayments: (с учетом будущих платежей)
+      inCurrency: в валюте
+  # <<< Should be renamed when error page will be ready
+
+component:
+  notify:
+    error:
+      default: При выполнении операции возникла ошибка.
+      tokenExpired: Ваша сессия истекла.
+      accessDenied: В доступе отказано.
+      notAuthenticated: Пользователь не аутентифицирован.
+      systemCategoryCanNotBeEdited: Системная статья не может быть отредактирована.
+      userWithThisEmailDoesNotExist: Пользователя с такой электронной почтой не существует.
+      userWithThisEmailAlreadyExists: Пользователь с такой электронной почтой уже существует.
+      userWithThisPhoneAlreadyExists: Пользователь с таким телефоном уже существует.
+      incorrectPassword: Текущий пароль указан неверно.
+      emailMustBeAValidEmailAddress: Электронная почта имеет неверный формат.
+      emailDomainCanContainLatinCharactersNumbersAndDashesInsideAndZoneSeparatedByDot: Домен электронной почты (после символа @) должен состоять из латинских букв и цифр, а точки и тире могут находиться только в средине.
+      emailMustContainAtCharacterBetweenLoginAndDomain: Электронная почта должна содержать символ @ между именем пользователя и доменом.
+      emailLoginCanOnlyContainLatinCharactersNumbersAndDotsDashesUnderscoresInside: Имя пользователя электронной почты (до символа @) должно состоять из латинских букв и цифр, а точки и тире могут находиться только в средине.
+      phoneMustStartWithAPlusAndContainBetween11And13Digits: Номер телефона должен начинаться с плюса и содержать от 11 до 13 цифр.
+      invalidCredentials: Неверные учетные данные.
+      firstNameMayNotBeGreaterThan100Characters: Имя должно быть не более 100 символов.
+      lastNameMayNotBeGreaterThan100Characters: Фамилия должна быть не более 100 символов.
+      emailMayNotBeGreaterThan100Characters: Электронная почта должна быть не более 100 символов.
+      emailIsRequired: Электронная почта должена быть заполнена.
+      passwordIsRequired: Пароль должен быть заполнен.
+      appIdIsRequired: Идентификатор бизнеса должен быть заполнен.
+      selectedAppIdIsInvalid: Выбранный идентификатор бизнеса недействителен.
+      userIsNotRegisteredInApp: Данный пользователь не зарегистрирован в бизнесе.
+      userAlreadyExistsInApp: Данный пользователь уже существует в бизнесе.
+      passwordCurrentIsRequired: Текущий пароль должен быть заполнен.
+      passwordNewIsRequired: Новый пароль должен быть заполнен.
+      passwordNewMustBeBetween8And50Characters: Новый пароль должен быть от 8 до 50 символов.
+      userDoesNotExistInApp: Данный пользователь не зарегистрирован в бизнесе.
+      youCanNotRemoveYourself: Вы не можете удалить себя.
+      selectedIdIsInvalid: Выбранный идентификатор недействителен. # TODO: need some comments
+      firstNameIsRequired: Имя должено быть заполнено.
+      phoneIsRequired: Телефон должен быть заполнен.
+      selectedLanguageIsInvalid: Выбранный язык недействителен.
+      languageIsRequired: Язык должен быть заполнен.
+      companyNameIsRequired: Название компании должено быть заполнено.
+      serverError: На сервере произошла ошибка. # TODO: need some comments
+      applicationInstallError: В процессе добавления бизнеса возникла ошибка.
+      companyNameMayNotBeGreaterThan255Characters: Название бизнеса не может быть больше 255 символов. # TODO: refactor names
+      companyNotFound: Компания не найдена.
+      transactionCategoryNotFound: Статья не найдена.
+      systemTransactionCategoryCanNotBeEdited: Системная статья не может быть отредактирована.
+      nameHasAlreadyBeenTaken: Данное название уже используется.
+      tagNotFound: Тег не найден.
+      projectNotFound: Проект не найден.
+      anErrorOccurred: Произошла ошибка.
+      transactionsIssetForBankAccount: Банковской счёт используется для транзакций.
+      monobankAccountsRequestFailed: Произошла ошибка при получении счетов Monobank.
+      sumMustBeMoreThen0: Сумма должна быть больше нуля.
+      integrationNotFound: Интеграция не найдена.
+      missingColumnSumPlusOrMinus: Отсутствует колонка Сумма (+) или Сумма (-).
+      missingColumnPaymentDate: Отсутствует колонка Дата оплаты.
+      missingColumnDescription: Отсутствует колонка Описание.
+      missingColumnSum: Отсутствует колонка Сумма.
+      settings:
+        importFieldsMustContainsRequiredValues: Колонки "Описание", "Дата оплаты", "Сумма" или "Сумма (+)" и "Сумма (-) являются обязательными.
+      userAlreadyExists: Пользователь с такой электронной почтой уже приглашён.
+      userNotFound: Пользователь не найден.
+      canNotRemoveOwner: Владельца бизнеса уволить невозможно.
+      canNotDeleteSystemRole: Системная роль не может быть удалена.
+      roleNotFound: Роль не найдена.
+      failedExport: При экспорте возникла ошибка, попробуйте снова позже.
+    warning:
+      default: Предупреждение.
+    success:
+      default: Операция успешно выполена.
+      passwordSuccessfullyReset: Новый пароль отправлен на вашу электронную почту.
+      passwordSuccessfullyChanged: Пароль успешно изменен.
+      applicationSuccessfullyInstalled: Бизнес успешно добавлен.
+      profileSuccessfullyUpdated: Профиль успешно обновлен.
+      successfullyRemoved: Успешно удалено. # TODO: rename key on backend
+      companyWasCreated: Компания успешно создана.
+      companyWasDeleted: Компания успешно удалена.
+      companyWasUpdated: Компания успешно обновлена.
+      transactionCategoryCreated: Статья успешно создана.
+      transactionCategoryDeleted: Статья успешно удалена.
+      transactionCategoryUpdated: Статья успешно обновлена.
+      tagCreated: Тег успешно создан.
+      tagDeleted: Тег успешно удалён.
+      tagUpdated: Тег успешно обновлён.
+      projectCreated: Проэкт успешно создан.
+      projectDeleted: Проэкт успешно удалён.
+      projectUpdated: Проэкт успешно обновлён.
+      monobankPersonalIntegrationSaved: Монобанк успішно інтегровано.
+      bankAccountCreated: Счёт успешно создан.
+      bankAccountUpdated: Счёт успешно обновлён.
+      bankAccountDeleted: Счёт успешно удалён.
+      userAdded: Пользователя успешно приглашено.
+      userUpdated: Пользователь успешно обновлён.
+      userFired: Пользователя успешно уволено.
+      userRestored: Пользователя успешно востановлено.
+      roleCreated: Роль успешно создана.
+      roleUpdated: Роль успешно обновлена.
+      roleDeleted: Роль успешно удалена.
+      settingsWasUpdated: Настройки успешно обновлены.
+      businessDeleted: Бизнес успешно удалён.
+      businessCreated: Бизнес успешно создан.
+      businessUpdated: Бизнес успешно обновлён.
+      counterpartyCreated: Контрагент успешно создан.
+      counterpartyUpdated: Контрагент успешно обновлён.
+      counterpartyDeleted: Котрагент успешно удалён.
+      transactionDeleted: Операция успешно удалена.
+      transactionsDeleted: ' | {count} операция успешно удалена. | {count} операции успешно удалены. | {count} операций успешно удалено.'
+      transactionsImported: Транзакции успешно импортированы.
+      transactionsExportStarted: Экспорт подготавливается. Это может занять некоторое время.
+      successExport: Экспорт завершен.
+      transactionsUnitedIntoTransfer: Операции успешно объединены в перевод.
+  fileUpload:
+    oneOrMoreFiles: Один или больше файлов.
+    files: Файлы
+    addFiles: Добавить файлы
+
+title:
+  divideTransaction: Разъединение операции
+  mergingIntoTransfer: Объединение в перевод
+  fireUser: Увольнение пользователя
+  restoreUser: Восстановление пользователя
+  importTransaction: Импорт операций
+  editTransactions: Редактирование операций
+  filter: Фильтр
+  connect: Подключение
+  login: Вход
+  signUp: Регистрация
+  passwordRecovery: Восстановление пароля
+  myProfile: Мой профиль
+  changingPassword: Смена пароля
+  profile: Профиль
+  myBusineses: Мои бизнесы
+  dashboard: Панель управления
+  distributions: Распределения
+  obligations: Обязательства
+  history: История
+  transfer: Перевод
+  chapters: Разделы
+  transactions: Платежи
+  reports: Отчёты
+  projects: Проекты
+  contragents: Контрагенты
+  settings: Настройки # TODO: Duplicated
+  business:
+    list: Мои бизнесы
+    add: Добавление бизнеса
+    edit: Редактирование бизнеса
+    delete: Удаление бизнеса
+  report:
+    _: Отчёты
+    cashFlow:
+      _: Деньги / Cash flow
+    profit:
+      _: Прибыль / P&L
+    receivables:
+      _: Дебиторка
+    payables:
+      _: Кредиторка
+    project:
+      _: Проекты
+    balance:
+      _: Баланс (скоро)
+  setting:
+    _: Настройки
+    common:
+      _: Общие настройки
+    integrations:
+      _: Интеграции
+      bitrix24:
+        _: Битрикс24
+        list: Интеграция с Битрикс24
+    account:
+      list: Счета
+      add: Добавление счета
+      edit: Редактирование счета
+      delete: Удаление счёта
+    category:
+      _: Статьи операций #TODO: Think about right name
+      list: Статьи
+      add: Создание статьи
+      edit: Редактирование статьи
+      delete: Удаление статьи
+    company:
+      list: Компании
+      add: Добавление компании
+      edit: Редактирование компании
+      delete: Удаление компании
+    user:
+      list: Пользователи
+      add: Добавление пользователя
+      edit: Редактирование пользователя
+    role:
+      list: Роли
+      add: Создание роли
+      edit: Редактирование роли
+      delete: Удаление роли
+     #TODO: Think about right name
+    permissions:
+      list: Права доступа
+    tag:
+      list: Теги
+      add: Создание тега
+      edit: Редактирование тега
+      delete: Удаление тега
+    project:
+      list: Проекты
+      add: Добавление проекта
+      edit: Редактирование проекта
+      delete: Удаление проекта
+    contragent:
+      list: Контрагенты
+      add: Добавление контрагента
+      edit: Редактирование контрагента
+      delete: Удаление контрагента
+  transaction:
+    list: Транзакции
+    add: Добавить операцию
+    edit: Редактировать операцию
+    delete: Удаление операции
+    copy: Копирование операции
+    expense: Расход
+    income: Доход
+    transfer: Перевод
+    changeType: сменить тип
+  information:
+    _: Информация
+    documentation: База знаний
+    support: Поддержка
+  error:
+    forbidden: Доступ запрещен
+    notFound: Страница не найдена
+    404: Страница не найдена
+
+label:
+  receivables: Дебиторская задолженность
+  payables: Кредиторская задолженность
+  showCents: Показывать копейки.
+  confirmedOperationDefault: Делать операцию подтверждённой по умолчанию.
+  openInCRM: Открыть в CRM
+  charts: Графики
+  transactionsList: Операции
+  paymentCalendar: Платёжный календарь
+  totalOnAccount: Всего на счетах
+  haventVisited: Ещё не заходил
+  role: Роль
+  acitve: Активен
+  invited: Приглашен
+  fired: Уволен
+  came: Заходил
+  status: Статус
+  projects: Проекты
+  view: Просмотр
+  edit: Редактирование
+  delete: Удаление
+  export: Экспорт
+  import: Импорт
+  money: Деньги
+  reports: Отчёты
+  settings: Настройки
+  roleName: Название роли
+  appVersion: Версия приложения
+  active: Активен.
+  multipleCategoriesListed: Указано несколько статей
+  withoutGroup: Без группы
+  from: От
+  to: До
+  in: в
+  copied: Скопировано
+  copyError: Ошибка копирования
+  split: Разбить
+  undoSplitting: Отменить разбиение
+  anyStatus: Любой статус
+  leaveStatusAsIs: Оставить статус как есть
+  confirmed: Подтверждена
+  notCorfimed: Не подтверждена
+  expenseAccount: Счёт расходов
+  incomeAccount: Счёт доходов
+  expenseCategory: Статья расходов
+  incomeCategory: Статья доходов
+  transferCategory: Статья переводов
+  unallocated: Нераспределённ...
+  stopRepeating: Остановить повторение
+  limit: Ограничить
+  repeat: Повторять
+  accrued: Начислено
+  details: Детали
+  requisites: Реквизиты
+  paymentDate: Дата оплаты
+  counteragents: Контрагенты
+  categories: Статьи
+  accounts: Счета
+  transactionType: Тип операции
+  email: Электронная почта
+  phone: Телефон
+  userName: Имя
+  surname: Фамилия
+  currentPassword: Текущий пароль
+  password: Пароль
+  newPassword: Новый пароль
+  id: ID
+  name: Название
+  currency: Валюта
+  company: Компания
+  contact: Контакт
+  employee: Сотрудник
+  counteragent: Контрагент
+  description: Описание
+  obligations: Обязательства
+  date: Дата
+  payments: Платежи
+  sum: Сумма
+  amount: Сумма
+  rate: Курс
+  total: Всего
+  type: Тип
+  bankAccount: Расчетный счет
+  documentNumber: Номер документа
+  counteragentAccount: Cчет контрагента
+  payDate: Дата платежа
+  sumEq: Сумма в эквиваленте
+  realSum: Сумма
+  createdAt: Создано
+  updatedAt: Обновлено
+  country: Страна
+  baseCurrency: Базовая валюта
+  yourCompanyInBitrix24: Ваша компания в Битрикс24
+  comment: Комментарий
+  businessName: Название бизнеса
+  language: Язык
+  account: Cчёт
+  integrationWithBanks: Интеграция с банками
+  merchantId: Идентификатор мерчанта
+  token: Секретный ключ
+  downloadTransactionsForPeriod: Загрузить транзакции за период
+  synchronizationPeriod: Период синхронизации
+  otherAccount: Другой
+  privatBank: ПриватБанк
+  monoBank: Монобанк
+  cash: Наличный
+  cashless: Безналичный
+  startBalance: Стартовый баланс
+  privatBankBusiness: ПриватБанк (бизнес)
+  privatBankPersonal: ПриватБанк (личная карта)
+  typeCategory: Тип статьи
+  activityCategory: Вид деятельности
+  autoClientId: ID автоклиента
+  ipAddressFine: IP адрес вашего Finé
+  merchantPassword: Пароль мерчанта
+  cardNumber: Номер карты
+  notIntegrated: Не интегрирован
+  integrated: Интегрирован
+  foundBankAccounts: 'Мы нашли следующие счета банке:'
+  accountAdded: cчёт добавлен
+  stopWords: Стоп слова
+  startLoadTransactionsFrom: Загружать операции с даты
+  cancelIntegration: Отменить интеграцию
+  lastUpdated: 'Последнее обновление:'
+  line: Строка
+  sheet: Лист
+  dateFormat: Формат даты
+  category: Статья
+  transferDate: Дата перевода
+  accrualDate: Дата начисления
+  plannedIncome: Плановый доход
+  plannedExpense: Плановый расход
+  projectInBx24: Проект в Битрикс24
+  yourPortalAddress: Адрес вашего портала
+  contactInCrm: Контакт в CRM
+  companyInCrm: Компания в CRM
+  employeeInCrm: Сотрудник в CRM
+  titleOrName: Название / Имя
+  taxNumber: Налоговый номер
+  expenseType: Тип расхода
+  incomeType: Тип дохода
+  declinedContact: контакта
+  declinedCompany: компании
+  declinedEmployee: сотрудника
+  allTransactionsWillBeDeleted: Все операции по счету будут удалены
+  businessBalanceWillBeRecalculated: Баланс бизнеса будет пересчитан
+  reportsWillBeChange: Отчеты будут изменены
+  allCompanyTransactionsWillBeDeleted: Все операции по счетам компании будут удалены
+  allCompanyAccountWillBeDeleted: Все счета компании будут удалены
+  repeatInterval:
+    everyWeek: Каждую неделю
+    everyMonth: Каждый месяц
+    everyQuarter: Каждый квартал
+    everyYear: Каждый год
+  contragentType:
+    client: Клиент
+    employee: Сотрудник
+    investor: Инвестор
+    creditor: Кредитор
+  cashFlowTypes:
+    expense: Расход
+    income: Доход
+    transfer: Перевод
+    deposit: Ввод денег
+    withdrawal: Вывод прибыли
+    balance: Сальдо
+  cashFlowActivities:
+    financial: Финансовая
+    investment: Инвестиционная
+    operating: Операционная
+  transaction: Транзакция
+  transactions: Транзакции
+  payer: Плательщик
+  purpose: Цель
+  deal: Сделка
+  fromAccount: Со счёта
+  intoAccount: На счёт
+  project: Проект
+  tags: Теги
+  month:
+    january: Январь
+    february: Февраль
+    march: Март
+    april: Апрель
+    may: Май
+    june: Июн
+    july: Июл
+    august: Август
+    september: Сентябрь
+    october: Октябрь
+    november: Ноябрь
+    december: Декабрь
+  declinedMonth:
+    january: Января
+    february: Февраля
+    march: Марта
+    april: Апреля
+    may: Мая
+    june: Июня
+    july: Июля
+    august: Августа
+    september: Сентября
+    october: Октября
+    november: Ноября
+    december: Декабря
+  monthShort:
+    january: Янв
+    february: Фев
+    march: Мар
+    april: Апр
+    may: Май
+    june: Июнь
+    july: Июль
+    august: Авг
+    september: Сен
+    october: Окт
+    november: Ноя
+    december: Дек
+  dayOfWeekFull:
+    monday: Понедельник
+    tuesday: Вторник
+    wednesday: Среда
+    thursday: Четверг
+    friday: Пятница
+    saturday: Суббота
+    sunday: Воскресенье
+  dayOfWeekShort:
+    monday: Пн
+    tuesday: Вт
+    wednesday: Ср
+    thursday: Чт
+    friday: Пт
+    saturday: Сб
+    sunday: Вс
+  paymentConfirmed: Платеж подтвержден
+  accrualConfirmed: Начисление подтверждено
+  paidIn: Сумма (+)
+  paidOut: Сумма (–)
+  operationType: Тип операции
+  skip: Пропуск
+  # >>> Should be refactored when design will be ready
+  permission:
+    _: Право доступа
+    list: Права доступа
+    names:
+      userView: Просмотр пользователей
+      userEdit: Редактирование пользователей
+      userDelete: Удаление пользователей
+      roleView: Просмотр ролей
+      roleEdit: Редактирование ролей
+      serviceEntityView: Просмотр сервисных сущностей
+      serviceEntityEdit: Редактирование сервисных сущностей
+      financeCacheExport: Экспорт баланса
+      transactionViewNotConfirmed: Просмотр неподтвержденных транзакций
+      transactionViewConfirmed: Просмотр подтвержденных транзакций
+      transactionEdit: Редактирование транзакции
+      transactionConfirm: Подтверждение транзации
+      transactionCancelConfirm: Отмена подтверждения транзакции
+      transactionDelete: Удаление транзакции
+      distribute: Распределение
+      cancelDistribute: Отмена распределения
+      createInvoice: Начисление пени
+      transferMoney: Перевод денег
+      financeCacheView: Просмотр баланса
+      transactionsCalculate: Расчет транзакций
+      transactionsExport: Экспорт транзакций
+  # <<< Should be refactored when design will be ready
+
+description:
+  cashFlowReport: Отчет о движении денежных средств.
+  profitReport: Отчет о прибыли и убытках.
+  receivablesReport: Кто должен вам денег и сколько.
+  payablesReport: Кому вы должены денег и сколько.
+  projectReport: Отчет о прибыли и убытках по проектам.
+  balanceReport: Состояние денег на счетах на дату.
+  roleSettings: Настройте доступ к деньгам более точно. Укажите конкретные счета, проекты, статьи и теги, операции с которыми вы хотите отображать пользователям.
+  yourCompanyInBitrix24: Реквизиты вашей компании в Битрикс24. Это поле используется для распределения денег
+    по счетам в CRM.
+  common: Название бизнеса, базовая валюта, язык.
+  countryCurrency: Используется для получения курсов валют из национального банка,
+    а также применения других локальных особенностей.
+  account: Ваши рассчётные счета, карты, кассы, сейфы.
+  company: Ваши юридические лица, ИП и физические лица.
+  user: Кто может заходить в ваш бизнес.
+  categories: Чтобы смотреть в отчетах доходы и расходы с разбивкой по статьям.
+  role: Что могут видеть и делать пользователи в вашем бизнесе.
+  bitrix24: Подтягивание контрагентов и проектов в Finé, отображение операций,
+    дебиторки и кредиторки в CRM, разнесение остатков по счетам.
+  businessName: Отобразится в шапке Finé, а также в списке ваших бизнесов.
+  baseCurrency: Используется для построения отчётов. Все деньги на счетах будут
+    приводится по курсу к данной валюте.
+  cash: Касса или сейф
+  cashless: Банковский счёт или карта
+  accountCompany: Счёт будет привязан к данной компании.
+  privatBankBusiness: Бизнес счёт
+  privatBankPersonal: Личная карта
+  businessAccountOrPersonalCard: Бизнес счёт или личная карта
+  integrationWithBank: Чтобы платежи начали автоматически попадать в систему,
+    выполните инеграцию с банком по данной <a href="/dashboard" >инструкции,</a> после чего заполните форму ниже.
+  token: Секретный ключ интеграции с банком.
+  accountNumber: Будет использован для импорта данных через банковскую выписку.
+  notIntegratedAccountNumber: Используется для импорта данных через банковские выписки.
+  stopWords: Если коментарий к операции будет содержать хотя-бы одно слово из списка – Finé не добавит её в систему.
+  importAccount: Чтобы загрузить операции за прошлый период или установить исключения – просто заполните поля ниже.
+    Вы всегда сможете изменить эти настройки позже.
+  sum: в эквиваленте
+  projects: Чтобы разделять потоки денег и сравнивать финансовый план с фактом.
+  tag: Для расширенной фильтрации по финансовым операциям.
+  dragImportFieldColumn: Перетяните сюда колонки в том порядке, в котором они расположены в вашем файле импорта.
+  paymentDate: Дата когда были получены деньги.
+  paymentConfirmed: Если галочка установлена, то операция будет учитываться в отчётах.
+  accrualDate: Дата совершения сделки (а не фактического зачисления денег). Если дата начисления не указана, то она будет равна дате оплаты.
+  accrualConfirmed: Если галочка установлена, то новая дата начисления будет учитываться в отчётах.
+  rate: Обменный курс валют (используйте, если хотите импортировать в систему определённый курс).
+  sumField: Число со знаком плюс или минус.
+  categoryField: Статья операции (название статьи в файле импорта должно полностью совпадать с тем, что имеется в системе. Если статья из файла импорта отсутствует в системе, то будет установлена статья по умолчанию).
+  description: Комментарий / Назначение к платежу.
+  paidIn: Число только со знаком плюс (используйте данный блок, если ваш файл импорта содержит 2 колонки для поля суммы).
+  paidOut: Число только со знаком минус (используйте данный блок, если ваш файл импорта содержит 2 колонки для поля суммы).
+  operationType: Тип операции (доход или расход). Используйте этот блок если в вашем файле импорта есть колонка, в которой строкой (явно) указывается тип операции.
+  skip: Используйте данный блок, чтобы пропустить одну или несколько колонок в вашем файле импорта.
+  createContragentOperations: Операции данного контрагента будут отображены в вашей CRM после указания соответствующего ему {contragent} в поле ниже.
+  deleteAccountAttention: <span>Внимание!</span> Удаление счёта приведет к необратимым последствиям и может занять несколько минут. Вы уверены?
+  deleteCompanyAttention: <span>Внимание!</span> Удаление компании приведет к необратимым последствиям и может занять несколько минут. Вы уверены?
+  category:
+    type:
+      expense: Используется для случаев когда вы фиксируете расходы.
+      income: Используется для случаев когда вы получаете прибыль.
+      transfer: Используется для случаев когда вы переводите деньги
+        со счёта на счёт. Операции с данным типом не учитываются в отчетах как прибыль или расход.
+      deposit: Используется для случаев когда вы вводите уставной
+        капитал. Операции с данным типом не учитываются в отчетах как прибыль.
+      withdrawal: Используется для случаев когда вы забираете дивиденды.
+        Операции с данным типом не учитываются в отчетах как расход.
+    activity:
+      operating: Это все движения денег, связанные с основной ежедневной
+        работой бизнеса, которая обеспечивает прибыль.
+      financial: Это кредиты и инвестиционные транши. Вы просто получаете
+        (или отдаете) деньги. Дальше они могут пойти в инвестиционную или операционную деятельность.
+      investment: Это покупка, продажа и обслуживание оборудования,
+        имущества, объектов вашей инфраструктуры. Например, вы покупаете ноутбук,
+        чтобы вести бизнес. Как бы инвестируете собственные деньги в себя.
+
+placeholder:
+  role: Выберите роль из списка
+  allAccounts: Все счета
+  allProjects: Все проекты
+  allCategories: Все статьи
+  allTags: Все теги
+  roleName: к примеру “Бухгалтер”
+  expenseType: дебет
+  incomeType: кредит
+  leaveAsIs: оставить как есть
+  unallocatedExpense: Нераспределённый расход
+  unallocatedIncome: Нераспределённый доход
+  tansferBetweenAccounts: Перевод между счетами
+  empty: пусто
+  notSelected: не выбран
+  anyDate: любая дата
+  anyCountragents: любой контрагент
+  anyAccount: любой счёт
+  anyCategory: любая статья
+  incomeExpenseTransfer: доход, расход, перевод
+  writeYourCurrentPassword: Введите ваш текущий пароль
+  writeYourNewPassword: Введите ваш новый пароль
+  email: petrov@gmail.com
+  name: Василий
+  surname: Петров
+  phone: Ваш номер телефона
+  typeToSearch: Начните ввод для поиска...
+  from: от
+  to: до
+  categoryName: к примеру "Зарплата"
+  companyName: ООО "Ромашка"
+  chooseCompany: Выберите компанию
+  comment: Ваши заметки
+  businessName: Самая лучшая компания
+  accountName: Монобанк *0999
+  startBalance: '0'
+  password: '********'
+  cardNumber: 0000 0000 0000 0000
+  stopWords: коммисия, списание
+  tagName: к примеру “Дизайн”
+  counteragent: Введите имя или ID...
+  project: Выберите или создайте проект
+  tags: Для гибкой фильтрации
+  fewWordsAboutOperation: Несколько слов об операции
+  projectName: Например «День рождения»
+  company: Выберите компанию из списка
+  projectInBx24: Введите название или ID...
+  writeNameOrId: Введите фамилию или ID...
+  yourPortalAddress: https://mycompany.bitrix24.ua
+  addMore: Добавить ещё...
+  writeNameOrSurnameOrID: Введите название компании, фамилию или ID...
+  titleOrName: Василий Петров
+  notSpecified: не указано
+  taxNumber: '0000000000'
+  contactCompanyEmployee: контакт, компания, сотрудник
+
+validation:
+  required: Заполните данное поле.
+  requiredFile: Необходимо выбрать файл.
+  mustBeEmail: Электронная почта имеет неверный формат.
+  passwordMinLength: Пароль должен быть не менее {length} символов.
+  phoneLength: Телефон должен содержать от 11 до 13 цифр.
+  moneyMinValue: Сумма должна быть больше нуля.
+  dateFormatWithDot: Дата должна быть в формате 'dd.mm.yyyy'.
+  notCorrectMonthNumber: Неверный номер месяца.
+  notCorrectDayNumber: Неверный день месяца.
+
+button:
+  divide: Разъединить
+  merge: Объединить
+  pullDataFromCRM: Подтянуть данные из CRM в форму
+  openInCrm: Открыть в CRM
+  restore: Восстановить
+  fire: Уволить
+  createRole: Создать роль
+  editRole: Редактировать роль
+  cancelCopy: Отменить копирование
+  copy: Копировать
+  selectFile: Выбрать файл
+  selectImage: Выбрать картинку
+  removeImage: Удалить картинку
+  customiseTemplate: Настроить шаблон
+  downloadTemplate: Скачать шаблон
+  viewInstructions: Смотреть инструкцию
+  imports: Импортировать
+  clear: Очистить
+  addMore: Добавить ещё
+  edit: Редактировать
+  combineIntoTransfer: Объединить в перевод
+  find: Найти
+  login: Войти
+  signUp: Начать бесплатно
+  changeName: Сменить название
+  customize: Настроить
+  pay: Оплатить
+  addBusiness: Добавить бизнес
+  demoBusiness: Демо бизнес
+  changePassword: Изменить пароль
+  resetPassword: Получить новый пароль
+  refreshPage: Обновить страницу
+  add: Добавить
+  delete: Удалить
+  decline: Отклонить
+  close: Закрыть
+  reset: Сбросить
+  save: Сохранить
+  spread: Распределить
+  import: Импорт
+  export: Экспорт
+  filters: Фильтр
+  more: Ещё
+  create: Создать
+  back: Назад
+  cancel: Отмена
+  show: Показать
+  hide: Скрыть
+  continue: Далее
+  integrateWithBank: Интегрировать с банком
+  settingFormatFileImport: Настроить формат файла импорта
+  differentDealDate: Дата сделки отличается
+  recurring: Сделать повторяющимся
+  showExtraFields: Добавить проект, тег...
+  addTag: Добавить тег...
+  setCategory: Указать статью
+  integrated: Интегрировать
+  cancelIntegration: Отменить интеграцию
+  startFree: Начать бесплатно
+  showMore: Показать ещё
+  viewPlannedTransactions: 'Нет плановых операций | Просмотреть {count} плановую операцию | Просмотреть {count} плановые операции | Просмотреть {count} плановых операций'
+  hidePlannedTransactions: Скрыть плановые операции
+  cashflow:
+    income: Доход
+    expense: Расход
+    transfer: Перевод
+
+currencies:
+  AED: Дирхам ОАЭ
+  AFN: Афганский Афгани
+  ALL: Албанский Лек
+  AMD: Армяский Драм
+  ANG: Гульден Нидерландский Антил
+  AOA: Ангольская Кванза
+  ARS: Аргентинское Песо
+  AUD: Австралийский Доллар
+  AWG: Арубский Флорин
+  AZN: Азербайджанский Манат
+  BAM: Конвертируемая Марка
+  BBD: Барбадосский Доллар
+  BDT: Бангладешская Така
+  BGN: Болгарский Лев
+  BHD: Бахрейнский Динар
+  BIF: Бурундийский Франк
+  BMD: Бермудский Доллар
+  BND: Брунейский Доллар
+  BOB: Боливийский Боливиано
+  BRL: Бразильский Реал
+  BSD: Багамский Доллар
+  BTN: Бутанский Нгултрум
+  BWP: Ботсванская Пула
+  BYR: Белорусский Рубль
+  BZD: Белизский Доллар
+  CAD: Канадский Доллар
+  CDF: Конголезский Франк
+  CHF: Швейцарский Франк
+  CLP: Чилийское Песо
+  CNY: Китайский Юань Жэньминьби
+  COP: Колумбийское Песо
+  CRC: Костариканский Колон
+  CUC: Кубинский Конвертируемый Песо
+  CUP: Кубинское Песо
+  CVE: Эскудо Кабо-Верде
+  CZK: Чешская Крона
+  DJF: Джибутийский Франк
+  DKK: Датская Крона
+  DOP: Доминиканское Песо
+  DZD: Алжирский Динар
+  EGP: Египетский Фунт
+  ERN: Эритрейская Накфа
+  ETB: Эфиопский Быр
+  EUR: Евро
+  FJD: Доллар Фиджи
+  FKP: Фунт Фолклендских Островов
+  GBP: Фунт Стерлингов Соединёного Королевства
+  GEL: Грузинский Лари
+  GHS: Ганский Седи
+  GIP: Гибралтарский Фунт
+  GMD: Гамбийский Даласи
+  GNF: Гвинейский Франк
+  GTQ: Гватемальский Кетцаль
+  GYD: Гайанский Доллар
+  HKD: Гонконгский Доллар
+  HNL: Гондурасская Лемпира
+  HRK: Хорватская Куна
+  HTG: Гаитянский Гурд
+  HUF: Венгерский Форинт
+  IDR: Индонезийская Рупия
+  ILS: Израильский Новый Шекель
+  INR: Индийская Руппия
+  IQD: Иракский Динар
+  IRR: Иранский Риал
+  ISK: Исландская Крона
+  JMD: Ямайский Доллар
+  JOD: Иорданский Динар
+  JPY: Японская Иена
+  KES: Кенийский Шиллинг
+  KGS: Киргизский Сом
+  KHR: Камбоджский Риель
+  KMF: Коморский Франк
+  KPW: Северокорейская Вона
+  KRW: Южнокорейский Вона
+  KWD: Кувейтский Динар
+  KYD: Доллар Каймановых Островов
+  KZT: Казахский Тенге
+  LAK: Лаосский Кип
+  LBP: Ливанский Фунт
+  LKR: Шри-Ланкийская Рупия
+  LRD: Либерийский Доллар
+  LSL: Лоти Лесото
+  LTL: Литовский Лит
+  LYD: Ливийский Динар
+  MAD: Марокканский Дирхам
+  MDL: Молдавский Лей
+  MGA: Малагасийский Ариари
+  MKD: Македонский Денар
+  MMK: Кьят Мьянмы
+  MNT: Монгольский Тугрик
+  MOP: Патака Макао
+  MRO: Мавританския Угия
+  MUR: Маврикийская Рупия
+  MVR: Мальдивская Руфия
+  MWK: Малавийская Квача
+  MXN: Мексиканское Песо
+  MYR: Малайзийский Рингит
+  MZN: Мозамбикский Метикал
+  NAD: Намибийский Доллар
+  NGN: Нигерийская Найра
+  NIO: Никарагуанская Золотая Кордоба
+  NOK: Норвежская Крона
+  NPR: Непальская Рупия
+  NZD: Новозеландский Доллар
+  OMR: Оманский Риал
+  PAB: Панамский Бальбоа
+  PEN: Перуанский Новый Соль
+  PGK: Кина Папуа-Новой Гвинеи
+  PHP: Филиппинское Песо
+  PKR: Пакистанская Рупия
+  PLN: Польский злотый
+  PYG: Парагвайский Гуарани
+  QAR: Катарский Риал
+  RON: Румынский Новый Лей
+  RSD: Сербский Динар
+  RUB: Российский Рубль
+  RWF: Руандийский Франк
+  SAR: Саудовский Риял
+  SBD: Доллар Соломоновых Островов
+  SCR: Сейшельская Рупия
+  SDG: Суданский Фунт
+  SEK: Шведская Крона
+  SGD: Сингапурский Доллар
+  SHP: Фунт Святой Елены
+  SLL: Сьерра-Леонский Леоне
+  SOS: Сомалийский Шиллинг
+  SRD: Суринамский Доллар
+  SSP: Южносуданский фунт
+  STD: Добра Сан-Тому И Принсипи
+  SYP: Сирийский Фунт
+  SZL: Свазилендский Лилангени
+  THB: Таиландский Бат
+  TJS: Таджикский Сомони
+  TMT: Туркменский Новый Манат
+  TND: Тунисский Динар
+  TOP: Тонганская Паанга
+  TRY: Турецкая Новая Лира
+  TTD: Доллар Тринидада и Тобаго
+  TWD: Тайваньский Новый Доллар
+  TZS: Танзанийский Шиллинг
+  UAH: Украинская Гривна
+  UGX: Угандийский Шиллинг
+  USD: Доллар США
+  UYU: Уругвайское Песо
+  UZS: Узбекский Сум
+  VEF: Венесуэльский Боливар Фуэрте
+  VND: Вьетнамский Донг
+  VUV: Вануатский Вату
+  WST: Самоанская Тала
+  XAF: Франк КФА ВЕАС
+  XCD: Восточно-Карибский Доллар
+  XOF: Франк КФА Общества
+  XPF: Французский Тихоокеанский Франк
+  YER: Йеменский Риал
+  ZAR: Южноафриканский Рэнд
+  ZMW: Замбийская Квача
+
+country:
+  ua: Украина
+  ru: Россия

@@ -1,0 +1,984 @@
+layout:
+  auth:
+    heading: <span>Simple</span> <br /> financial tool for small businesses
+    feature:
+      first: Automatically collects money transfers across accounts and distribute transactions.
+      second: Generates understandable reports and graphs.
+      third: Provides complete and secure money control in business.
+  main:
+    logout: Logout
+
+page:
+  login:
+    title: Sign in to Finé
+  signUp:
+    title: Create your account
+    acceptRule: By submitting the form, you agree to our <a href={agreementLink}>terms of service</a> and <a href={policyLink}>privacy statement</a>. We’ll occasionally send you account related emails.
+    hasAccount: Already have an account? Sign in
+  forgotPassword:
+    _: Forgot password?
+    title: Can't Sign in?
+    description: We will send you a new password by email.
+    backToLogInForm: Go to Sign in
+  business:
+    companyNotSpecified: Not filled
+    deleteBusiness: Are you sure you want to delete the <span>«{business}»</span> business? <br />
+      <br />
+      All it operations, contractors, projects, etc. also will be deleted.
+  bitrix24:
+    signUp:
+      haveAccount: Already have a Finé account? Connect it
+    connect:
+      connectToBx24: Connect to Bitrix24
+      createNewAccount: Create new account
+      integrationWithBx24Rules: 'To integrate with Bitrix24:'
+      goInSettingsBx24: 'In your Finé account, go to the page: Settings > Integrations > Bitrix24.'
+      writeAddressOnPortal: Enter your Bitrix24 portal link.
+      clickOnIntegrate: Click "Integrate" button. Refresh this page when the process will be completed.
+  setting:
+    category:
+      deleteModalText: Do you really want to delete category «<span>{title}</span>»?
+    contragent:
+      deleteModalText: Do you really want to delete contragent «<span>{title}</span>»?
+    tag:
+      deleteModalText: Do you really want to delete tag «<span>{title}</span>»?
+    project:
+      deleteModalText: Do you really want to delete project «<span>{title}</span>»?
+    company:
+      deleteModalText: Do you really want to delete company «<span>{title}</span>»?
+    role:
+      deleteModalText: Do you really want to delete role «<span>{title}</span>»?
+    user:
+      fireModalText: Do you really want to fire user «<span>{title}</span>»?
+      restoreModalText: Do you really want to restore user «<span>{title}</span>»?
+  # >>> Should be renamed when error page will be ready
+    account:
+      yourAccounts: Yout accounts
+      whatAccountYouWantToAdd: What account you want to add?
+      inputNameAndCompany: 'Input name and company:'
+      enterYourAccountDetails: 'Enter your account details:'
+      whichBankIsTheAccountOpenedWith: Which bank is the account opened with?
+      integrationWithBank: 'Integration with the bank:'
+      settingImportFileFormListTitle: 'To configure a bank statement import, specify:'
+      rowNumberInTheTableStartingFrom: Row number in the table from which you want to load data.
+      sheetNumberOnWhichTheDataIsLocated: Number of sheet with data.
+      statementDateFormat: 'Date format, where: day - "DD", month - "MM", year - "YY" or "YYYY".'
+      readInstruction: read instruction
+      setColumnsInTheSameOrderAsInYourImportFile: Set columns in the same order as they go in your
+        import file. To skip a column, use the "Skip" box.
+      availableColumns: 'Available columns:'
+      yourFileColumns: 'Your file columns:'
+      deleteAccountDescription: You really want to delete account <span>«{title}»</span>?
+    bitrix24:
+      integrationUpdated: Integration updated
+      integratedUser: ${User} assigned as a user for data exchange with Bitrix24.
+      integratedRecomend: We recommend connecting a user with administrator rights,
+        so that Finé can display all data from Bitrix24.
+      changeIntegrationUser:
+        _: 'If you want to connect another user:'
+        cancelIntegration: Cancel the integration using the button below.
+        signInUserInBx24: Log in with needed user in Bitrix24.
+        repeatIntegration: Make integration again.
+      integrationInstruction:
+        _: 'To make integration with Bitrix24:'
+        installFineInBx24: Install Finé application to your Bitrix24.
+        writeLinkOnBx24: Enter your Bitrix24 portal address.
+        clickOnIntegrate: Click the "Integrate" button.
+  forbidden:
+    description: Access to the page is denied.
+  notFound:
+    description: Page not Found.
+  transactions:
+    mergeRequirements: "To merge selected transactions into a transfer, they must have:"
+    differentAccounts: Different accounts
+    differentTypes: Different types
+    incomeAndExpense: income and expense
+    similarDate: Same date
+    similarStatus: Same status
+    acceptOrDeclined: accepted or not accepted
+    similarAmount: Same amount
+    accountCurrencySimilar: if account currencies are same also
+    deleteModalText: Do you really want to delete this transaction?
+    divideTransferTransactionModal: Do you really want to divide transfer transaction?
+    massDeleteModalText: ' | Do you really want to delete <span>{count} transaction</span>? | Do you really want to delete <span>{count} transactions</span>?'
+    importModal:
+      selectFile: Choose file or drag and drop yoga from window.
+      importOpportunities: 'Fine can import bank statements in CSV, TXT, and XLSX (excel spreadsheet) formats.'
+    moneyDetails:
+      totalOnAccounts: Total on accounts
+      showInCurrency: show in {currency}
+      futurePayments: Future payments
+      futurePaymentsPeriod: for {amountOfMonth} mon.
+      futureIncome: Future income
+      futureExpense: Future expense
+      consideringFuturePayments: (considering future payments)
+      inCurrency: in currency
+  # <<< Should be renamed when error page will be ready
+
+component:
+  notify:
+    error:
+      default: Operation error.
+      tokenExpired: You session has been expired.
+      accessDenied: Access denied.
+      notAuthenticated: Not authenticated.
+      systemCategoryCanNotBeEdited: System category can not be edited.
+      userWithThisEmailDoesNotExist: User with this email does not exist.
+      userWithThisEmailAlreadyExists: User with this email already exists.
+      userWithThisPhoneAlreadyExists: User with this phone already exists.
+      incorrectPassword: The password is incorrect.
+      emailMustBeAValidEmailAddress: Email must be a valid email address.
+      emailDomainCanContainLatinCharactersNumbersAndDashesInsideAndZoneSeparatedByDot: Email domain after @ can contain latin characters numbers and dashes inside and zone separated by dot.
+      emailMustContainAtCharacterBetweenLoginAndDomain: Email must contain character @ between login and domain.
+      emailLoginCanOnlyContainLatinCharactersNumbersAndDotsDashesUnderscoresInside: Email login can only contain latin characters numbers and dots dashes underscores inside.
+      phoneMustStartWithAPlusAndContainBetween11And13Digits: Phone must start with a plus and contain between 11 and 13 digits.
+      invalidCredentials: Invalid credentials.
+      firstNameMayNotBeGreaterThan100Characters: First name may not be greater than 100 characters.
+      lastNameMayNotBeGreaterThan100Characters: Surname may not be greater than 100 characters.
+      emailMayNotBeGreaterThan100Characters: Email may not be greate than 100 characters.
+      emailIsRequired: Email is required.
+      passwordIsRequired: Password is required.
+      appIdIsRequired: Business ID is required.
+      selectedAppIdIsInvalid: Business ID is invalid.
+      userIsNotRegisteredInApp: User is not registered in the business.
+      userAlreadyExistsInApp: User already exists in business.
+      passwordCurrentIsRequired: Сurrent password is required.
+      passwordNewIsRequired: New password is required.
+      passwordNewMustBeBetween8And50Characters: New password must be between 8 and 50 characters.
+      userDoesNotExistInApp: User does not exist in business.
+      youCanNotRemoveYourself: You can not remove yourself.
+      selectedIdIsInvalid: Selected id is invalid.
+      firstNameIsRequired: Name is required.
+      phoneIsRequired: Phone is required.
+      selectedLanguageIsInvalid: Selected language is invalid.
+      languageIsRequired: Language is required.
+      companyNameIsRequired: Company name is required.
+      serverError: Server error occurred.
+      applicationInstallError: An error occurred while adding a business.
+      companyNameMayNotBeGreaterThan255Characters: Company name may not be greater than 255 characters.
+      companyNotFound: Company not found.
+      transactionCategoryNotFound: Category not found.
+      systemTransactionCategoryCanNotBeEdited: System category can not be edited.
+      nameHasAlreadyBeenTaken: Name has already been taken.
+      tagNotFound: Tag not found.
+      projectNotFound: Project not found.
+      anErrorOccurred: An error occurred.
+      transactionsIssetForBankAccount: Transactions isset for bank account.
+      monobankAccountsRequestFailed: An error occured while getting Monobank accounts.
+      sumMustBeMoreThen0: Sum must be more than zero.
+      integrationNotFound: Integration not found.
+      missingColumnSumPlusOrMinus: Missing column Sum (+) or Sum (-).
+      missingColumnPaymentDate: Missing column Payment date.
+      missingColumnDescription: Missing column Description.
+      missingColumnSum: Missing column Sum.
+      settings:
+        importFieldsMustContainsRequiredValues: The columns "Description", "Payment date", "Amount" or "Amount (+)" and "Amount (-)" are required.
+      userAlreadyExists: A user with this email has already been invited.
+      userNotFound: User not found.
+      canNotRemoveOwner: Business owner cannot be fired.
+      canNotDeleteSystemRole: System role can not be deleted.
+      roleNotFound: Role not found.
+      failedExport: An error occurred while exporting, please try again later.
+    warning:
+      default: Operation warning.
+    success:
+      default: Operation successful.
+      passwordSuccessfullyReset: Password successfully reset.
+      passwordSuccessfullyChanged: Password successfully changed.
+      applicationSuccessfullyInstalled: Bussiness successfully added.
+      profileSuccessfullyUpdated: Profile successfully updated.
+      successfullyRemoved: Successfully removed.
+      companyWasCreated: Company successfully created.
+      companyWasDeleted: Company successfully deleted.
+      companyWasUpdated: Company successfully updated.
+      transactionCategoryCreated: Category successfully created.
+      transactionCategoryDeleted: Category successfully deleted.
+      transactionCategoryUpdated: Category successfully updated.
+      tagCreated: Tag successfully created.
+      tagDeleted: Tag successfully deleted.
+      tagUpdated: Tag successfully updated.
+      projectCreated: Project successfully created.
+      projectDeleted: Project successfully deleted.
+      projectUpdated: Project successfully updated.
+      monobankPersonalIntegrationSaved: Monobank has been successfully integrated.
+      bankAccountCreated: Bank account successfully created.
+      bankAccountUpdated: Bank account successfully updated.
+      bankAccountDeleted: Bank account successfully deleted.
+      userAdded: User successfully invited.
+      userUpdated: User successfully updated.
+      userFired: User successfully fired.
+      userRestored: User successfully restore.
+      roleCreated: Role successfully created.
+      roleUpdated: Role successfully updated.
+      roleDeleted: Role successfully deleted.
+      settingsWasUpdated: Settings was successfully updated.
+      businessDeleted: Business successfully deleted.
+      businessCreated: Business successfully created.
+      businessUpdated: Business successfully updated.
+      counterpartyCreated: Counterparty successfull created.
+      counterpartyUpdated: Counterparty successfull updated.
+      counterpartyDeleted: Counterparty successfull deleted.
+      transactionDeleted: Transaction successfully deleted.
+      transactionsDeleted: ' | {count} transaction successfully deleted. | {count} transactions successfully deleted.'
+      transactionsImported: Transactions successfully imported.
+      transactionsExportStarted: Export is being prepared. It can take some time.
+      successExport: Export finished.
+      transactionsUnitedIntoTransfer: Transactions successfully merged into a transfer.
+  OurFileInput:
+    oneOrMoreFiles: One or more files
+    files: Files
+    addFiles: Add files
+
+title:
+  divideTransaction: Divide transaction
+  mergingIntoTransfer: Merging into transfer
+  fireUser: Fire user
+  restoreUser: Restore user
+  importTransaction: Import transaction
+  editTransactions: Edit transactions
+  filter: Filter
+  connect: Connect
+  login: Sign in
+  signUp: Create account
+  passwordRecovery: Recovery password
+  myProfile: My profile
+  changingPassword: Change password
+  profile: Profile
+  myBusineses: My busineses
+  dashboard: Dashboard
+  distributions: Distributions
+  obligations: Obligations
+  history: History
+  transfer: Transfer
+  chapters: Chapters
+  transactions: Transactions
+  reports: Reports
+  projects: Projects
+  contragents: Contragents
+  settings: Settings
+  business:
+    list: My businesses
+    add: Add business
+    edit: Edit business
+    delete: Delete business
+  report:
+    _: Reports
+    cashFlow:
+      _: Money / Cash flow
+    profit:
+      _: Profit / P&L
+    receivables:
+      _: Accounts receivable
+    payables:
+      _: Creditors
+    project:
+      _: Projects
+    balance:
+      _: Balance (coming soon)
+  setting:
+    _: Settings
+    common:
+      _: Common settings
+    integrations:
+      _: Integrations
+      bitrix24:
+        _: Bitrix24
+        list: Integration with bitrix24
+    account:
+      list: Accounts
+      add: Add account
+      edit: Edit account
+      delete: Delete account
+    category:
+      _: Transaction categories
+      list: Categories
+      add: Add category
+      edit: Edit category
+      delete: Delete category
+    company:
+      list: Companies
+      add: Add company
+      edit: Edit company
+      delete: Delete company
+    user:
+      list: Users
+      add: Add user
+      edit: Edit user
+    role:
+      list: Roles
+      add: Create role
+      edit: Edit role
+      delete: Delete role
+    permissions:
+      list: Access rights
+    tag:
+      list: Tags
+      add: Create tag
+      edit: Edit tag
+      delete: Delete tag
+    project:
+      list: Projects
+      add: Add project
+      edit: Edit project
+      delete: Delete project
+    contragent:
+      list: Contragents
+      add: Add contragent
+      edit: Edit contragent
+      delete: Delete contragent
+  transaction:
+    list: Transactions
+    add: Add transaction
+    edit: Edit transaction
+    delete: Delete transaction
+    copy: Copy transaction
+    expense: Expense
+    income: Income
+    transfer: Transfer
+    changeType: change type
+  information:
+    _: Information
+    documentation: Knowledge base
+    support: Support
+  error:
+    forbidden: Access denied
+    notFound: Page not found
+    404: Page not found
+
+label:
+  receivables: Receivables
+  payables: Payables
+  showCents: Show cents.
+  confirmedOperationDefault: Make the transaction confirmed by default.
+  openInCRM: Open in CRM
+  charts: Charts
+  transactionsList: Transactions
+  paymentCalendar: Payment calendar
+  totalOnAccount: Total on accounts
+  haventVisited: Haven't visited yet
+  role: Role
+  acitve: Active
+  invited: Invited
+  fired: Fired
+  came: Came
+  status: Status
+  projects: Projects
+  view: View
+  edit: Edit
+  delete: Delete
+  export: Export
+  import: Import
+  money: Money
+  reports: Reports
+  settings: Settings
+  roleName: Role name
+  appVersion: App version
+  active: Active.
+  multipleCategoriesListed: Multiple categories listed
+  withoutGroup: Whithout group
+  from: From
+  to: To
+  in: in
+  copied: Copied
+  copyError: Copy error
+  split: Split
+  undoSplitting: Undo splitting
+  anyStatus: Any status
+  leaveStatusAsIs: Leave status as is
+  confirmed: Confirmed
+  notCorfimed: Not confirmed
+  expenseAccount: Expense account
+  incomeAccount: Income account
+  expenseCategory: Expense category
+  incomeCategory: Income category
+  transferCategory: Transfer category
+  unallocated: Unallocated...
+  stopRepeating: Stop repeating
+  limit: Limit
+  repeat: Repeat
+  accrued: Accrued
+  details: Details
+  requisites: Requisites
+  paymentDate: Payment date
+  counteragents: Counteragents
+  categories: Categories
+  accounts: Accounts
+  transactionType: Transaction type
+  email: Email
+  phone: Phone
+  userName: Name
+  surname: Surname
+  currentPassword: Current password
+  password: Password
+  newPassword: New password
+  id: ID
+  name: Name
+  currency: Currency
+  company: Company
+  contact: Contact
+  employee: Employee
+  counteragent: Counteragent
+  description: Description
+  obligations: Obligations
+  date: Date
+  payments: Payments
+  sum: Sum
+  amount: Amount
+  rate: Rate
+  total: Total
+  type: Type
+  bankAccount: Bank account
+  documentNumber: Document number
+  counteragentAccount: Counteragent account
+  payDate: Pay date
+  sumEq: Equivalent sum
+  realSum: Sum
+  createdAt: Created at
+  updatedAt: Updated at
+  country: Country
+  baseCurrency: Base currency
+  yourCompanyInBitrix24: Your company in Bitrix24
+  comment: Comment
+  businessName: Business name
+  language: Language
+  account: Account
+  integrationWithBanks: Integration with banks
+  merchantId: merchant ID
+  token: Token
+  downloadTransactionsForPeriod: Download transactions for the period
+  synchronizationPeriod: Synchronization period
+  otherAccount: Other
+  privatBank: PrivatBank
+  monoBank: Monobank
+  cash: Cash
+  cashless: Cashless
+  startBalance: Initial balance
+  privatBankBusiness: PrivatBank (business)
+  privatBankPersonal: PrivatBank (personal)
+  autoClientId: Auto client ID
+  ipAddressFine: IP address of your Finé
+  merchantPassword: Merchant password
+  cardNumber: Card number
+  notIntegrated: Not integrated
+  integrated: Integrated
+  foundBankAccounts: 'We found the following bank accounts:'
+  accountAdded: account added
+  stopWords: Stop words
+  startLoadTransactionsFrom: Load transactions from date
+  cancelIntegration: Cancel integration
+  lastUpdated: 'Last updated:'
+  line: Line
+  sheet: Letter
+  dateFormat: Date format
+  typeCategory: Category type
+  activityCategory: Activity type
+  category: Category
+  transferDate: Transfer date
+  accrualDate: Accrual date
+  plannedIncome: Planned income
+  plannedExpense: Planned expense
+  projectInBx24: Project in Bitrix24
+  yourPortalAddress: Your portal address
+  contactInCrm: Contact in CRM
+  companyInCrm: Company in CRM
+  employeeInCrm: Employee in CRM
+  titleOrName: Title / Name
+  taxNumber: Tax number
+  expenseType: Expense type
+  incomeType: Income type
+  declinedContact: contact
+  declinedCompany: company
+  declinedEmployee: employee
+  allTransactionsWillBeDeleted: All account transactions will be deleted
+  businessBalanceWillBeRecalculated: Business balance will be recalculated
+  reportsWillBeChange: Reports will be changed
+  allCompanyTransactionsWillBeDeleted: All transactions on company accounts will be deleted
+  allCompanyAccountWillBeDeleted: All company accounts will be deleted
+  repeatInterval:
+    everyWeek: Every week
+    everyMonth: Every month
+    everyQuarter: Every quarter
+    everyYear: Every year
+  contragentType:
+    client: Client
+    employee: Employee
+    investor: Investor
+    creditor: Creditor
+  cashFlowTypes:
+    expense: Expense
+    income: Income
+    transfer: Transfer
+    deposit: Input money
+    withdrawal: Withdrawal profit
+    balance: Balance
+  cashFlowActivities:
+    financial: Financial
+    investment: Investment
+    operating: Operating
+  transaction: Transaction
+  transactions: Transactions
+  payer: Payer
+  purpose: Purpose
+  deal: Deal
+  fromAccount: From account
+  intoAccount: Into account
+  project: Project
+  tags: Tags
+  month:
+    january: January
+    february: February
+    march: March
+    april: April
+    may: May
+    june: June
+    july: July
+    august: August
+    september: September
+    october: October
+    november: November
+    december: December
+  declinedMonth:
+    january: January
+    february: February
+    march: March
+    april: April
+    may: May
+    june: June
+    july: July
+    august: August
+    september: September
+    october: October
+    november: November
+    december: December
+  monthShort:
+    january: Jan
+    february: Feb
+    march: Mar
+    april: Apr
+    may: May
+    june: Jun
+    july: Jul
+    august: Aug
+    september: Sep
+    october: Oct
+    november: Nov
+    december: Dec
+  dayOfWeekFull:
+    monday: Monday
+    tuesday: Tuesday
+    wednesday: Wednesday
+    thursday: Thursday
+    friday: Friday
+    saturday: Saturday
+    sunday: Sunday
+  dayOfWeekShort:
+    monday: Mon
+    tuesday: Tue
+    wednesday: Wed
+    thursday: Thu
+    friday: Fri
+    saturday: Sat
+    sunday: Sun
+  paymentConfirmed: Payment confirmed
+  accrualConfirmed: Accrual confirmed
+  paidIn: Sum (+)
+  paidOut: Sum (–)
+  operationType: Transaction type
+  skip: Skip
+  # >>> Should be refactored when design will be ready
+  permission:
+    _: Permission
+    list: Permissions
+    names:
+      userView: View users
+      userEdit: Editing users
+      userDelete: Deleting users
+      roleView: View roles
+      roleEdit: Editing roles
+      serviceEntityView: Viewing service entities
+      serviceEntityEdit: Editing service entities
+      financeCacheExport: Balance export
+      transactionViewNotConfirmed: Viewing unconfirmed transactions
+      transactionViewConfirmed: Viewing confirmed transactions
+      transactionEdit: Editing transaction
+      transactionConfirm: Transaction confirmation
+      transactionCancelConfirm: Cancel transaction confirmation
+      transactionDelete: Deleting transaction
+      distribute: Distribution
+      cancelDistribute: Cancel distribution
+      createInvoice: Calculation of penalties
+      transferMoney: Money transfer
+      financeCacheView: Balance view
+      transactionsCalculate: Transactions calculate
+      transactionsExport: Transactions export
+  # <<< Should be refactored when design will be ready
+
+description:
+  cashFlowReport: Cash flow statement.
+  profitReport: Profit and loss statement.
+  receivablesReport: Who owes you money and how much.
+  payablesReport: Who do you owe money and how much.
+  projectReport: Project profit and loss statement.
+  balanceReport: The state of money in the accounts on the date.
+  roleSettings: Customize access to money more precisely. Specify the particular accounts, projects, categories, and tags, transactions with which you want to show to users.
+  yourCompanyInBitrix24: Your company requisites in Bitrix24. This field is used to distribute money by invoices in CRM.
+  common: Business name, base currency, language.
+  countryCurrency: Used to obtain exchange rates from the national bank,
+    and applying other local features.
+  account: Your accounts, cards, cashboxes, safes.
+  company: Your companies, individual entrepreneurs and individuals.
+  user: Who can enter in your business.
+  categories: It hepls to view incomes and expenses in reports divideed by categories.
+  role: What users can see and do in your business.
+  bitrix24: Showing contractors and projects in Finé, displaying transactions,
+    receivable and payable balances in CRM, distributing balances by accounts.
+  businessName: It will appear in the Finé header and at the list of your businesses.
+  baseCurrency: Used to build reports. All the money in the accounts will be
+    to be carried out at the exchange rate to this currency.
+  cash: Cashbox or safe
+  cashless: Bank account or card
+  accountCompany: Аccount will be linked to this company.
+  privatBankBusiness: Business account
+  privatBankPersonal: Personal card
+  businessAccountOrPersonalCard: Business account or personal card
+  integrationWithBank: For transactions to start automatically entering the system, perform integration
+    with bank according to this <a href="/dashboard" >manual,</a> and then fill out the form below.
+  token: Bank integration secret key.
+  accountNumber: Will be used to import data via bank statement.
+  notIntegratedAccountNumber: Used to import data through bank statements.
+  stopWords: If comment to transaction contains at least one word from the list, Finé will not add it to the system.
+  importAccount: To download transactions for the past period or set some exceptions - just input fields below.
+  sum: in equivalent
+  projects: To separate money flows and compare the financial plan with the fact.
+  tag: For advanced filtering by financial transactions.
+  dragImportFieldColumn: Drag the columns here in the order they appear in your import file.
+  paymentDate: The date money was received.
+  paymentConfirmed: If the checkbox is checked, then the operation will be shown in the reports.
+  accrualDate: Date of the transaction (not the actual transfer of money). If accrual date is not specified, it will be equal to the payment date.
+  accrualConfirmed: If the checkbox is checked, then the new accrual date will be shown in the reports.
+  rate: Exchange rate (use it if you want to import a specific rate into the system).
+  sumField: A number with a plus or minus sign.
+  categoryField: Transaction category (the name of the category in the imported file must completely match what is in the system. If the article from the import file is not in the system, then the article will be set by default).
+  description: Comment / Payment purpose.
+  paidIn: Number with plus sign only (use this block if your imported file contains 2 columns for the amount field).
+  paidOut: Number with minus sign only (use this block if your imported file contains 2 columns for the amount field).
+  operationType: Operation type (income or expense). Use this block if your imported file has a column in which the line (explicitly) indicates the type of operation.
+  skip: Use this block to skip one or more columns in your imported file.
+  createContragentOperations: The transactions of this counterparty will be reflected in your CRM after specifying the appropriate {contragent} in the field below.
+  deleteAccountAttention: <span>Attention!</span> Deleting an account will be permanent and may take several minutes. Are you sure?
+  deleteCompanyAttention: <span>Attention!</span> Deleting a company will be permanent and may take several minutes. Are you sure?
+  category:
+    type:
+      expense: Used for cases when you input expence.
+      income: Used for cases when you input income.
+      transfer: Used for cases when you transfer money
+        from account to account. Transactions with this type are ignored in reports as income or expence.
+      deposit: Used for cases where you enter the share
+        capital. Transactions with this type are ignored in reports as income.
+      withdrawal: Used for cases when you take dividends.
+        Transactions with this type are ignored in reports as expence.
+    activity:
+      operating: It's all cash flow related to basic daily
+        business work that makes a profit.
+      financial: These are loans and investment tranches. You just get it
+        (or give) money. Then it can go into investment or operating activities.
+      investment: This is the purchase, sale and maintenance of equipment,
+        property, objects of your infrastructure. For example, you buy a laptop,
+        to do business. Invest your own money in yourself.
+
+placeholder:
+  role: Select role from list
+  allAccounts: All accounts
+  allProjects: All projects
+  allCategories: All categories
+  allTags: All tags
+  roleName: for example “Accountant”
+  expenseType: debit
+  incomeType: credit
+  leaveAsIs: leave as is
+  unallocatedExpense: Unallocated expense
+  unallocatedIncome: Unallocated income
+  tansferBetweenAccounts: Transfer between accounts
+  empty: empty
+  notSelected: not selected
+  anyDate: any date
+  anyCountragents: any counteragent
+  anyAccount: any account
+  anyCategory: any category
+  incomeExpenseTransfer: income, expense, transfer
+  writeYourCurrentPassword: Enter your current password
+  writeYourNewPassword: Enter yout new password
+  email: smith@gmail.com
+  name: John
+  surname: Smith
+  phone: Your phone number
+  typeToSearch: Type to search...
+  from: from
+  to: to
+  categoryName: for example "Salary"
+  companyName: LLC "Chamomile"
+  chooseCompany: Choose company
+  comment: Your notes
+  businessName: The best company
+  accountName: Monobank *0999
+  startBalance: '0'
+  password: '********'
+  cardNumber: 0000 0000 0000 0000
+  stopWords: commission, write-off
+  tagName: for example "Design"
+  counteragent: Enter name or ID...
+  project: Select or create a project
+  tags: For flexible filtration
+  fewWordsAboutOperation: A few words about the operation
+  projectName: For example "Birthday"
+  company: Select company from list
+  projectInBx24: Enter name or ID...
+  writeNameOrId: Enter surname or ID...
+  yourPortalAddress: https://mycompany.bitrix24.ua
+  addMore: Add more...
+  writeNameOrSurnameOrID: Enter company name, surname or ID...
+  titleOrName: John Smith
+  notSpecified: not specified
+  taxNumber: '0000000000'
+  contactCompanyEmployee: contact, company, employee
+
+validation:
+  required: Fill in this field.
+  requiredFile: Select file please.
+  mustBeEmail: Email format is incorrect.
+  passwordMinLength: Password must be at least {length} characters.
+  phoneLength: Phone must contain from 11 to 13 digits.
+  moneyMinValue: Sum must be more than zero.
+  dateFormatWithDot: Date should be in format 'dd.mm.yyyy'.
+  notCorrectMonthNumber: Wrong month number.
+  notCorrectDayNumber: Wrong day in month.
+
+button:
+  divide: Divide transaction
+  merge: Merge
+  pullDataFromCRM: Pull CRM data into form
+  openInCrm: Open in CRM
+  restore: Restore
+  fire: Fire
+  createRole: Create role
+  editRole: Edit role
+  cancelCopy: Cancel copy
+  copy: Copy
+  selectFile: Select file
+  selectImage: Select image
+  removeImage: Remove image
+  customiseTemplate: Customise template
+  downloadTemplate: Download template
+  viewInstructions: View instructions
+  imports: Import
+  clear: Clear
+  addMore: Add more
+  edit: Edit
+  combineIntoTransfer: Combine into transfer
+  find: Find
+  login: Sign in
+  signUp: Get started for free
+  changeName: Change name
+  customize: Сustomize
+  pay: Pay
+  addBusiness: Add business
+  demoBusiness: Demo business
+  changePassword: Change password
+  resetPassword: Get a new password
+  add: Add
+  delete: Delete
+  decline: Decline
+  close: Close
+  reset: Reset
+  save: Save
+  spread: Spread
+  import: Import
+  export: Export
+  filters: Filter
+  more: More
+  create: Create
+  back: Back
+  cancel: Cancel
+  show: Show
+  hide: Hide
+  continue: Continue
+  integrateWithBank: Integrate with bank
+  settingFormatFileImport: Set import file format
+  differentDealDate: Deal date is different
+  recurring: Make it recurring
+  showExtraFields: Add project, tag...
+  addTag: Add tag...
+  setCategory: Set category
+  integrated: Integrate
+  cancelIntegration: Cancel integration
+  startFree: Start free
+  refreshPage: Refresh page
+  showMore: Show more
+  viewPlannedTransactions: 'No planned transactions | View {count} planned transaction | View {count} planned transactions'
+  hidePlannedTransactions: Hide planned transactions
+  cashflow:
+    income: Income
+    expense: Expense
+    transfer: Transfer
+
+currencies:
+  AED: United Arab Emirates Dirham
+  AFN: Afghan Afghani
+  ALL: Albanian Lek
+  AMD: Armenian Dram
+  ANG: Netherlands Antillean Guilder
+  AOA: Angolan Kwanza
+  ARS: Argentine Peso
+  AUD: Australian Dollar
+  AWG: Aruban Florin
+  AZN: Azerbaijani Manat
+  BAM: Bosnia And Herzegovina Convertible Mark
+  BBD: Barbados Dollar
+  BDT: Bangladeshi Taka
+  BGN: Bulgarian Lev
+  BHD: Bahraini Dinar
+  BIF: Burundian Franc
+  BMD: Bermudian Dollar
+  BND: Brunei Dollar
+  BOB: Boliviano
+  BRL: Brazilian Real
+  BSD: Bahamian Dollar
+  BTN: Bhutanese Ngultrum
+  BWP: Botswana Pula
+  BYR: Belarusian Ruble
+  BZD: Belize Dollar
+  CAD: Canadian Dollar
+  CDF: Congolese Franc
+  CHF: Swiss Franc
+  CLP: Chilean Peso
+  CNY: Chinese Yuan
+  COP: Colombian Peso
+  CRC: Costa Rican Colon
+  CUC: Cuban Convertible Peso
+  CUP: Cuban Peso
+  CVE: Cape Verde Escudo
+  CZK: Czech Koruna
+  DJF: Djiboutian Franc
+  DKK: Danish Krone
+  DOP: Dominican Peso
+  DZD: Algerian Dinar
+  EGP: Egyptian Pound
+  ERN: Eritrean Nakfa
+  ETB: Ethiopian Birr
+  EUR: Euro
+  FJD: Fiji Dollar
+  FKP: Falkland Islands Pound
+  GBP: Pound Sterling
+  GEL: Georgian Lari
+  GHS: Ghanaian Cedi
+  GIP: Gibraltar Pound
+  GMD: Gambian Dalasi
+  GNF: Guinean Franc
+  GTQ: Guatemalan Quetzal
+  GYD: Guyanese Dollar
+  HKD: Hong Kong Dollar
+  HNL: Honduran Lempira
+  HRK: Croatian Kuna
+  HTG: Haitian Gourde
+  HUF: Hungarian Forint
+  IDR: Indonesian Rupiah
+  ILS: Israeli New Shekel
+  INR: Indian Rupee
+  IQD: Iraqi Dinar
+  IRR: Iranian Rial
+  ISK: Icelandic Króna
+  JMD: Jamaican Dollar
+  JOD: Jordanian Dinar
+  JPY: Japanese Yen
+  KES: Kenyan Shilling
+  KGS: Kyrgyzstani Som
+  KHR: Cambodian Riel
+  KMF: Comoro Franc
+  KPW: North Korean Won
+  KRW: South Korean Won
+  KWD: Kuwaiti Dinar
+  KYD: Cayman Islands Dollar
+  KZT: Kazakhstani Tenge
+  LAK: Lao Kip
+  LBP: Lebanese Pound
+  LKR: Sri Lankan Rupee
+  LRD: Liberian Dollar
+  LSL: Lesotho Loti
+  LTL: Lithuanian Litas
+  LYD: Libyan Dinar
+  MAD: Moroccan Dirham
+  MDL: Moldovan Leu
+  MGA: Malagasy Ariary
+  MKD: Macedonian Denar
+  MMK: Myanma Kyat
+  MNT: Mongolian Tugrik
+  MOP: Macanese Pataca
+  MRO: Mauritanian Ouguiya
+  MUR: Mauritian Rupee
+  MVR: Maldivian Rufiyaa
+  MWK: Malawian Kwacha
+  MXN: Mexican Peso
+  MYR: Malaysian Ringgit
+  MZN: Mozambican Metical
+  NAD: Namibian Dollar
+  NGN: Nigerian Naira
+  NIO: Nicaraguan Córdoba
+  NOK: Norwegian Krone
+  NPR: Nepalese Rupee
+  NZD: New Zealand Dollar
+  OMR: Omani Rial
+  PAB: Panamanian Balboa
+  PEN: Peruvian Nuevo Sol
+  PGK: Papua New Guinean Kina
+  PHP: Philippine Peso
+  PKR: Pakistani Rupee
+  PLN: Polish Złoty
+  PYG: Paraguayan Guaraní
+  QAR: Qatari Riyal
+  RON: Romanian New Leu
+  RSD: Serbian Dinar
+  RUB: Russian Rouble
+  RWF: Rwandan Franc
+  SAR: Saudi Riyal
+  SBD: Solomon Islands Dollar
+  SCR: Seychelles Rupee
+  SDG: Sudanese Pound
+  SEK: Swedish Krona
+  SGD: Singapore Dollar
+  SHP: Saint Helena Pound
+  SLL: Sierra leonean Leone
+  SOS: Somali Shilling
+  SRD: Surinamese Dollar
+  SSP: South Sudanese Pound
+  STD: São Tomé And Príncipe Dobra
+  SYP: Syrian Pound
+  SZL: Swazi Lilangeni
+  THB: Thai Baht
+  TJS: Tajikistani Somoni
+  TMT: Turkmenistani Manat
+  TND: Tunisian Dinar
+  TOP: Tongan Paʻanga
+  TRY: Turkish Lira
+  TTD: Trinidad And Tobago Dollar
+  TWD: New Taiwan Dollar
+  TZS: Tanzanian Shilling
+  UAH: Ukrainian Hryvnia
+  UGX: Ugandan Shilling
+  USD: United States Dollar
+  UYU: Uruguayan Peso
+  UZS: Uzbekistan Som
+  VEF: Venezuelan Bolívar Fuerte
+  VND: Vietnamese Dong
+  VUV: Vanuatu Vatu
+  WST: Samoan Tala
+  XAF: CFA Franc BEAC
+  XCD: East Caribbean Dollar
+  XOF: CFA Franc BCEAO
+  XPF: CFP Franc
+  YER: Yemeni Rial
+  ZAR: South African Rand
+  ZMW: Zambian Kwacha
+
+country:
+  ua: Ukraine
+  ru: Russia

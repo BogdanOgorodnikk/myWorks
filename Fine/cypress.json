@@ -1,0 +1,7 @@
+{
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "video": false,
+  "defaultCommandTimeout": 12000,
+  "viewportWidth": 1366,
+  "viewportHeight": 768
+}

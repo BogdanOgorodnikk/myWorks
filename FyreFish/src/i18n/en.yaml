@@ -1,0 +1,396 @@
+page:
+  property:
+    tenant: Tenant
+    unit: Unit
+    contact: Contact
+    name: Name
+    sqft: Sq Ft
+    status: Status
+  account:
+    details: Details
+    account: Account
+    type: Type
+    created: Created
+    status: Status
+    alerts: Alerts
+    billing: Billing
+    mailing: Mailing
+    service: Service
+    address: Address
+    contact: Contact
+    administration: Administration
+    technical: Technical
+    onsiteAccess: On-Site Access
+    otherContacts: Other Contacts
+    otherAddresses: Other Addresses
+    ADMINSTRATOR: Administration
+    BILLING: Billing
+    TECHNICAL: Technical
+    ONSITE_ACCESS: On-Site Access
+    OTHER: Other
+  signUp:
+    identifyLocation: Identify your location
+    selectProducts: Select your products
+    provideInformation: Provide your information
+    paymentDetails: Payment details
+    choosePaymentMethod: Choose your payment method
+    yourBillingAddress: Your home address
+    yourSelectedProducts: Your selected products
+    hasAccount: Already have an account? Sign in
+    notFindBuilding: There are no buildings that match your current filter.
+    pricePerUser: Price per Line / mo.
+    termsAndConditions: Terms & Conditions
+    perMonth: per month
+    product: Product
+    qty: Qty
+    price: Price
+    successfullySigned: You have successfully signed up for Red Bison services!
+    receiveOnEmailPackage: Thank you for your patronage. You will receive an email containing your welcome package and instructions on using your services.
+    clickBelowToLogin: Click below to login to our Customer Self Service Portal.
+  login:
+    loading: Loading...
+  forbidden:
+    description: Access to the page is denied.
+  notFound:
+    description: Page not Found.
+  profile:
+    contacts: "Contacts:"
+    addresses: "Addresses:"
+  bill:
+    accountBalance: "Account Balance:"
+    paymentAmount: "Payment Amount:"
+    paymentConfirmation: Thank you! We have received you payment.
+    balanceOwed: Balance Owed
+    latestBill: Your Latest Bill
+    billingPeriod: Billing Period
+    perMonth: per month
+    previousBalance: 'Previous Balance:'
+    currentCharges: 'Current Charges:'
+    amountDue: 'Amount Due:'
+    autoPayDate: 'Auto Pay Date:'
+    viewInvoice: View Invoice
+    promotions: Promotions
+    noActivePromotions: There are currently no active promotions for your property.
+    announcements: Announcements
+    monthlySpend: Monthly Spend
+    monthlySpendService: Monthly Spend by Service
+    voicemail: Voicemail
+    voipPhone: VoIP Phone
+    internationalLD: International LD
+    paymentHistory: Payment History
+    confirmation: 'Confirmation #:'
+    billingHistory: Billing History
+    bill: 'Bill #:'
+    paymentMethods: Payment Methods
+    subtotal: Subtotal
+    taxesAndFees: Taxes and Fees
+    totalNewCharges: Total New Charges
+    pleaseRemitPaymentsTo: "Please remit payments to:"
+    thankYouForUsingRedBison: Thank you for using Red Bison!
+    managePaymentMethods: Manage Payment Methods
+  shop:
+    selectProducts: Select your products
+  product:
+    numberOfUsers: Number of users
+  support:
+    contactUs: Contact Us
+    contactSupport: Send a Message to Support
+    from: "From:"
+    phone: "Phone:"
+    inquiries: "Inquiries:"
+    office: "Office:"
+  settings:
+    settings: Settings
+    security: Security
+    twoFactorAuthentication: Two Factor Authentication
+    propertyManager: Property Manager
+    accountOwner: Account Owner
+    accountAdministrators: Account Administrators
+    standardUsers: Standard Users
+
+component:
+  ourPasswordMeter:
+    getInfo: get info
+    reliability:
+      weak: Weak
+      guessable: Guessable
+      safe: Safe
+      secure: Secure
+      strong: Strong
+  ourFileUpload:
+    selectFileOrDragInWindow: Select a file or drag and drop it into this window.
+    fileWhichCanUse: 'Fine can import bank statements in formats: CSV, TXT, and XLSX (Excel spreadsheet).'
+  ourDatePicker:
+    yesterday: Yesterday
+    today: Today
+    tomorrow: Tomorrow
+  ourDateSeparator:
+    yesterday: Yesterday
+    today: Today
+    tomorrow: Tomorrow
+  ourMultiselect:
+    clear: clear
+  notify:
+    error:
+      default: Operation error.
+      tokenExpired: You session has been expired.
+      accessDenied: Access denied.
+      notAuthenticated: Not authenticated.
+      E_WC_02: A HTTPS connection is required.
+      E_WC_03: Accept.js is not loaded correctly.
+      E_WC_05: Please provide valid credit card number.
+      E_WC_06: Please provide valid expiration month.
+      E_WC_07: Please provide valid expiration year.
+      E_WC_08: If card information is provided, the expiration date (month and year) must be in the future.
+      E_WC_15: Please provide valid CVV.
+      E_WC_18: Client Key is required.
+      E_WC_19: An error occurred during processing. Please try again.
+      E_WC_24: Please provide valid account number.
+      E_WC_25: Please provide valid routing number.
+      E_WC_26: Please provide valid account holder name.
+      E_WC_27: Please provide valid account type.
+      authenticationInitializationFailure: Authentication initialization failure.
+      failedToRefreshTheToken: Failed to refresh the token, or the session has expired.
+    warning:
+      default: Operation warning.
+    success:
+      default: Operation successful.
+  filter:
+    title: Filters
+  select:
+    listIsEmpty: List is empty.
+    noDataToShow: No data to show.
+  emptyTableMsg:
+    noItems: There is no data in the table yet.
+    noResultsForFilters: No results were found for the specified filters.
+
+title:
+  contactUs: Contact us
+  makePayment: Make a Payment
+  paymentConfirmation: Payment Confirmed
+  submitPayment: Submit Payment
+  addBankAccount: Add Banking Account
+  addBankInformation: Add Banking Information
+  yourBillingAddress: Your Billing Address
+  accountNumber: Account Number
+  subscribed: Subscribed
+  promotions: Promotions
+  properties: Properties
+  summary: Summary
+  details: Details
+  memo: Memo
+  dateIssued: Date Issued
+  invoice: Invoice
+  addPaymentMethod: Add Payment Method
+  addCreditCard: Add Credit Card
+  billingInformations: Billing Information
+  confirmationPaymentAdded: Thank you! We have added your payment method and completed your purchase.
+  dateDue: Date Due
+  serviceAddress: Service Address
+  previousBalance: Previous Balance
+  paymentsReceived: Payments received
+  balanceForward: Balance Forward
+  newCharges: New Charges
+  totalDue: Total Due
+  description: Description
+  serviceDates: Service Dates
+  qty: Qty
+  units: Units
+  $/Unit: $ / Unit
+  discount: Discount
+  price: Price
+  home: Home
+  shop: Shop
+  browse: Browse
+  help: Need help?
+  signUp: Sign up
+  login: Sign in
+  passwordRecovery: Recovery password
+  forgotPassword: Forgot Password?
+  myProfile: My profile
+  changingPassword: Change password
+  profile: Profile
+  dashboard: Dashboard
+  chapters: Chapters
+  propertise: Propertise
+  products: Products
+  users: Users
+  account: Account
+  billing: Billing
+  settings: Settings
+  services: Services
+  information: Information
+  support: Support
+  brandName: Red Bison
+  fleeceLinings: Fleece Linings Inc.
+  kaperProperty: Kaper Property Management
+  editAddress: Edit Address
+  addAddress: Add Address
+  editContact: Edit Contact
+  addContact: Add Contact
+  managePaymentMethods: Manage Payment Methods
+  deletePaymentMethod: Delete Payment Method
+  servicesChanged: Services Changed
+  saveChanges: Save Changes
+  changeApplied: Change Applied
+  printInvoice: Print Invoice
+  error:
+    forbidden: Access denied
+    notFound: Page not found
+    404: Page not found
+
+label:
+  occupancyByunits: Occupancy By Units
+  occupancyBySqFt: Occupancy By Sq Ft
+  announcements: Announcements
+  buildings: Buildings
+  unitsAndLocations: Units And Locations
+  tenants: Tenants
+  property: Property
+  propertyManager: Property Manager
+  name: Name
+  message: Message
+  paymentAmount: Payment Amount
+  amex: AMEX
+  masterCard: MasterCard
+  visa: VISA
+  creditCardNumber: Card Number
+  expirationDate: Expiration Date
+  cvvCode: CVV Code
+  streetAddressLine1: Street Address Line 1
+  streetAddressLine2: Street Address Line 2
+  serviceAdress: Service address
+  unitAdress: Unit address
+  creditCard: Credit Card
+  accountType: Account Type
+  nameOnCard: Name on Card
+  bankAccount: Bank Account (ACH)
+  useServiceAddress: Use service address as billing address.
+  autopay: Autopay
+  bankAccountNumber: Account number
+  bankRoutingNumber: Routing number
+  numberOfUsers: Number of Lines
+  searchBuilding: Get started by searching for your building
+  confirmed: Confirmed
+  notCorfimed: Not confirmed
+  email: Email
+  secondaryEmailOptional: secondary Email (Optional)
+  userName: Name
+  surname: Surname
+  currentPassword: Current password
+  password: Password
+  newPassword: New password
+  oldPassword: Old password
+  retypePassword: Re-type password
+  language: Language
+  firstName: First Name
+  lastName: Last Name
+  phoneNumber: Phone Number
+  secondaryPhoneNumberOptional: Secondary Phone Number (Optional)
+  phone: Phone
+  company: Company (optional)
+  serviceAddress: Service address
+  makeDefault: Make default payment profile
+  unitAddress: Unit address
+  streetAddress: Street address
+  city: City
+  state: State
+  country: Country
+  ZIPCode: ZIP code
+  shop: Shop
+  billing: Billing
+  services: Services
+  account: Account
+  on: On
+  off: Off
+  useSavedAddress: Use Saved Address
+  useSavedContact: Use Saved Contact
+  username: Username
+  role: Role
+  recoveryEmail: Recovery email
+  recoveryPhone: Recovery phone
+  contactType: Contact Type
+
+description:
+  noActivePromotions: There are currently no active promotions for your property.
+
+placeholder:
+  message: Your message...
+  creditCardNumber: "**** **** **** ****"
+  expirationDate: MM / YY
+  cvvCode: '***'
+  nameOnCard: John Doe
+  bankAccountNumber: "**** **** ****"
+  bankRoutingNumber: "*********"
+  streetAddressLine1: 5th Avenue
+  searchBuilding: Type building name or address
+  writeYourCurrentPassword: Enter your current password
+  writeYourNewPassword: Enter yout new password
+  email: john.doe@gmail.com
+  name: John
+  surname: Smith
+  phone: 000-000-0000
+  password: '********'
+  addMore: Add more...
+  firstName: First Name
+  lastName: Last Name
+  company: Google
+  city: Las Vegas
+  state: NV
+  country: USA
+  ZIPCode: "81202"
+  contactSupport: "Enter message here"
+
+validation:
+  required: Fill in this field.
+  mustBeEmail: Email format is incorrect.
+  passwordMinLength: Password must be at least {length} characters.
+  phoneLength: Phone number should contain at least 10 digits.
+  creditCardLength: Credit Card must be between 15 and 16 digits
+  cvvLength: CVV must be between 3 and 4 digits
+  dateformat: Date format must be 01-12/00-99
+  dateformatFuture: Date year must be in the future
+  routingNumberLength: Routing number must be 9 digits
+  accountNumberLength: Account number must be between 8 and 12 digits
+  changesMaybeNotSaved: Changes you made may not be saved.
+  messageMinLength: Message must be at least {length} characters.
+  messageMaxLength: Message must be no longer than {length} characters.
+  paymentAmount: Payment must be a valid dollar amount.
+  areYouSureToDelete: Are you sure to delete?
+
+button:
+  submit: Submit
+  selectFile: Select file
+  login: Login
+  changePassword: Change password
+  resetPassword: Get a new password
+  signUp: Get started for free
+  edit: Edit
+  search: Search
+  loadMore: Load more
+  goToLogin: Go to login
+  next: Next
+  back: Back
+  proceedToCheckout: Proceed to Checkout
+  contactUs: Сontact us
+  checkOut: Check Out
+  separatedLogIn: Log In
+  makePayment: Make a Payment
+  view: View
+  addPaymentMethod: Add Payment Method
+  termsAndConditions: Terms & Conditions
+  viewMore: View More
+  details: Details
+  cancel: Cancel
+  addPayment: Add Payment
+  deletePayment: Delete Payment
+  payNow: Pay Now
+  addPaymentMethodDescription: Add a new card or ACH transfer.
+  save: Save
+  saveChanges: Save Changes
+  manageMyAccount: Manage My Account
+  manageAccountOwner: Manage Account Owner
+  addAdministrator: Add an Administrator
+  addStandardUser: Add a Standard User
+  discardChanges: Discard Changes
+  close: Close
